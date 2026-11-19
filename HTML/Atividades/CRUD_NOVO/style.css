@@ -1,0 +1,191 @@
+
+/* CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    color: black;
+}
+
+/* CABEÇALHO */
+.cabecalho {
+    width: 100%;
+    height: 72px;
+    background-color: #0796c2;
+}
+
+/* IDENTIFICAÇÃO DA INSTITUIÇÃO */
+.instituicao {
+    height: 20px;
+    padding: 3px 8px;
+
+    background: linear-gradient(
+        to bottom,
+        #17618f,
+        #064b7c
+    );
+
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* LOGO */
+.logo {
+    padding: 7px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.container {
+    padding: 8px;
+    width: 100%;
+}
+
+/* TÍTULO PRINCIPAL */
+h1 {
+    font-size: 21px;
+    font-weight: normal;
+    margin-bottom: 34px;
+}
+
+/* TÍTULOS DAS SEÇÕES */
+section h2 {
+    background-color: #0796c2;
+    color: white;
+
+    font-size: 14px;
+    padding: 2px 12px;
+
+    margin-bottom: 12px;
+}
+
+/* ÁREA DOS DADOS CADASTRAIS */
+.dados_cadastrais {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px 24px;
+    margin-bottom: 20px;
+}
+
+/* ÁREA DE AUTENTICAÇÃO */
+.dados_autenticacao {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px 24px;
+    margin-bottom: 20px;
+}
+
+/* CAMPOS */
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    min-width: 0;
+}
+
+/* CAMPO QUE OCUPA AS TRÊS COLUNAS */
+.largura-total {
+    grid-column: span 3;
+}
+
+/* CAMPO QUE OCUPA DUAS COLUNAS */
+.campo-duplo {
+    grid-column: span 2;
+}
+
+/* LABELS */
+.campo label {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/* INPUTS E SELECTS */
+.campo input,
+.campo select {
+    width: 100%;
+    height: 21px;
+
+    border: 1px solid #aaa;
+    border-radius: 0;
+
+    background-color: white;
+
+    padding: 2px 5px;
+    font-size: 12px;
+
+    outline: none;
+}
+
+/* EFEITO AO SELECIONAR */
+.campo input:focus,
+.campo select:focus {
+    border: 1px solid #0796c2;
+}
+
+/* BOTÕES */
+.botoes {
+    display: flex;
+    gap: 14px;
+    margin-top: 15px;
+}
+
+.botoes button {
+    width: 110px;
+    height: 24px;
+
+    background-color: white;
+    border: 1px solid #777;
+
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.botoes button:hover {
+    background-color: #e8f5fa;
+    border-color: #0796c2;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 700px) {
+
+    .dados_cadastrais {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .largura-total {
+        grid-column: span 2;
+    }
+
+    .campo-duplo {
+        grid-column: span 1;
+    }
+
+    .dados_autenticacao {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .dados_cadastrais {
+        grid-template-columns: 1fr;
+    }
+
+    .largura-total,
+    .campo-duplo {
+        grid-column: span 1;
+    }
+}
